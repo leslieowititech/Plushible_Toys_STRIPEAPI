@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    background: #F794A7;
+}
+
+.header-right{
+    display: flex;
+    gap: .9em;
+}
+
+.plushible-search{
+    height: 3em;
+    padding-left: 1em;
+}
+
+.plushible-search:focus{
+    outline: #A82C43;
+}
+
+.logo h1 span{
+    color: white;
+}
