@@ -1,16 +1,10 @@
-import React from 'react';
 import './App.css';
-import Header from './components/Header';
-
-export interface PlushibleProps {
-  quantity: number
-}
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
-  const quantity = 0
   return (
     <div className="App">
-      <Header quantity={quantity}/>
+      <NavBar/>
     </div>
   );
 }
