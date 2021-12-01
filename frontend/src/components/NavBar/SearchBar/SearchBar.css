@@ -1,5 +1,6 @@
 .search-bar-container{
     position: relative;
+    border-radius: 1em;
 }
 
 .search-bar-input{
@@ -7,6 +8,8 @@
     height: 3em;
     outline: none;
     border: none;
+    border-radius: .8em;
+    padding-left: 1em;
    
 }
 .search-bar-icon{
