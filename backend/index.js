@@ -7,6 +7,6 @@ const productsRouter = require('./routes/products');
 app.use('/products', productsRouter)
 
 const PORT = process.env.PORT || 5001
-
+console.log(process.env.PORT, 'port here')
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
