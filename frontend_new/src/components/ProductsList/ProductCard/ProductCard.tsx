@@ -2,17 +2,18 @@ import React from "react";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import QuantityDropDown from "./QuantityDropDown/QuantityDropDown";
-interface ProductCardProps {
-    maxItems: number;
+export interface ProductCardProps {
     description: string;
-    price: number
+    price: number;
+    name: string
 } 
 
-const ProductCard: React.FC<ProductCardProps> = ({maxItems, description, price}) => {
+const ProductCard: React.FC<ProductCardProps> = ({ description, price, name}) => {
     return (
         <div>
             <img src='#' alt=''/>
-            <QuantityDropDown maxItems={maxItems}/>
+            <h2>{name}</h2>
+            <QuantityDropDown/>
             <div>{description}</div>
             <div>{price}</div>
             <AddShoppingCartIcon/>
