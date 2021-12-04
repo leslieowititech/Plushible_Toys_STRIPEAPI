@@ -8,11 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const productDb = require('../model/Product');
+const Product_1 = __importDefault(require("../model/Product"));
 module.exports = {
     get: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        let products = yield productDb.products.list();
+        let products = yield Product_1.default.products.list();
         return res.json(products);
     })
 };
