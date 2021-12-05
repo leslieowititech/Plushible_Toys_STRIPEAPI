@@ -3,13 +3,15 @@ import ProductCard from './ProductCard';
 import {ProductCardProps} from './ProductCard'
 
 interface ProductListProps {
-    products: ProductCardProps[]
+    products: ProductCardProps[];
+    prices: ProductCardProps[];
+    searchPhrase: string
 }
-const ProductsList: React.FC<ProductListProps> = ({products}) => {
+const ProductsList: React.FC<ProductListProps> = ({products, prices, searchPhrase}) => {
     return (
         <div>
             {products.map((product, index) => (
-                <ProductCard key={index} name={product.name} description={product.description} price={product.price} images={product.images}/>
+                <ProductCard key={index} name={product.name} description={product.description} unit_amount={prices[index].unit_amount /100} images={product.images}/>
             ))}
         </div>
     )

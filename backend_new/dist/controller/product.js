@@ -16,6 +16,7 @@ const Product_1 = __importDefault(require("../model/Product"));
 module.exports = {
     get: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         let products = yield Product_1.default.products.list();
-        return res.json(products);
+        let prices = yield Product_1.default.prices.list();
+        return res.json([products, prices]);
     })
 };

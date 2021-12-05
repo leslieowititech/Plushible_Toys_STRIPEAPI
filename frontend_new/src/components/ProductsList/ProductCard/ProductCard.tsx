@@ -5,12 +5,12 @@ import './ProductCard.css';
 import QuantityDropDown from "./QuantityDropDown/QuantityDropDown";
 export interface ProductCardProps {
     description: string;
-    price: number;
+    unit_amount: number;
     name: string;
     images: string[];
 } 
 
-const ProductCard: React.FC<ProductCardProps> = ({ description, price, name, images}) => {
+const ProductCard: React.FC<ProductCardProps> = ({ description, unit_amount, name, images}) => {
     return (
         <div className='product-card-container'>
             <div className='product-card-image-container grid-row-span-2'>
@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ description, price, name, ima
             <div className='product-card-details-container'>
                 <h2>{name}</h2>
                 <p>{description}</p>
-                <p>{price}</p>
+                <p>$ {unit_amount}</p>
             </div>
             <div className='product-card-utility'>
                 <QuantityDropDown/>
