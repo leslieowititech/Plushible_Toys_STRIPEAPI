@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar searchPhrase={searchPhrase} setSearchPhrase={setSearchPhrase}/>
       {/* <AddProductFrom/> */}
       <ProductsList products={products} prices={prices} searchPhrase={searchPhrase}/>
     </div>

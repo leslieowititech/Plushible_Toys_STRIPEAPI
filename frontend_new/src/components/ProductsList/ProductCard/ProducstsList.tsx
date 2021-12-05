@@ -10,7 +10,7 @@ interface ProductListProps {
 const ProductsList: React.FC<ProductListProps> = ({products, prices, searchPhrase}) => {
     return (
         <div>
-            {products.map((product, index) => (
+            {products.filter(product => product.name.toLowerCase().includes(searchPhrase.toLowerCase())).map((product, index) => (
                 <ProductCard key={index} name={product.name} description={product.description} unit_amount={prices[index].unit_amount /100} images={product.images}/>
             ))}
         </div>
