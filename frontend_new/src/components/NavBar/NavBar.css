@@ -1,0 +1,15 @@
+.nav-bar-continer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #f794a849;
+    padding: 1em;
+}
+
+.nav-bar-cart-icon span{
+    color: #f02e51;
+    font-weight: 700;
+    position: absolute;
+    top: .6rem;
+    
+}

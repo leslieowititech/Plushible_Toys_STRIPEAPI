@@ -1,0 +1,20 @@
+.add-product-form-container{
+    display: flex;
+    flex-direction: column;
+    background: #39c1f767;
+    width: max-content;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: .9em;
+    align-items: center;
+    justify-content: center;
+    gap: .8em;
+}
+
+.add-product-form-button{
+    background: #A82C43;
+    height: 3em;
+    width: 5em;
+    border: none;
+    color: white;
+}
