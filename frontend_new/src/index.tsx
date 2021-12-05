@@ -9,7 +9,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import { SearchBarProvider } from './context/SearchBarContext';
 import { CartContextProvider } from './context/CartItemsContext';
 
-const stripePromise = loadStripe("pk_test_51K1EcQBN69YBp2gzBltlGaRyM0uSu4br3TKYAlXmzcd8QrlPPeHXnfIT08a91hEvdx2vkDGSfqfBJHpyQ3TLJvjU00q0l0XY8p");
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY!);
 
 ReactDOM.render(
   <React.StrictMode>

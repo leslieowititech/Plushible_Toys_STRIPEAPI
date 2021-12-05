@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [prices, setPrices] = useState([]);
   
-
+  
   const getProducts = async () => {
     const response = await fetch('http://localhost:8080/products', {
       headers: {'Content-Type': 'application/json'}
