@@ -9,10 +9,10 @@ const AddProductFrom:React.FC = () => {
     const [url, setUrl] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
+    // const stripe = 
 
     const addProductHandler = (e:React.FormEvent) => {
         e.preventDefault()
-        console.log(name)
 
     }
 

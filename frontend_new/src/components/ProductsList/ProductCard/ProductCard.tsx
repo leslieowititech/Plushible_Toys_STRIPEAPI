@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './ProductCard.css';
 
-import QuantityDropDown from "./QuantityDropDown/QuantityDropDown";
 import { CartContext } from "../../../context/CartItemsContext";
 export interface ProductCardProps {
     description: string;
@@ -17,8 +16,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ description, unit_amount, nam
     const handleAddToCart = (e: React.FormEvent) => {
         e.preventDefault();
         setItems([...items,{ description, name, unit_amount, images}])
-        setQuantity(quantity + 1)
+        setQuantity(quantity + 1);
+        localStorage.setItem("items", JSON.stringify(items))
     }
+
+    useEffect(() => {
+        setItems(items)
+    },[items, setItems])
 
     return (
         <div className='product-card-container'>
@@ -31,7 +35,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ description, unit_amount, nam
                 <p>$ {unit_amount}</p>
             </div>
             <div className='product-card-utility'>
-                <QuantityDropDown/>
                 <AddShoppingCartIcon onClick={handleAddToCart}/>
             </div>
         </div>

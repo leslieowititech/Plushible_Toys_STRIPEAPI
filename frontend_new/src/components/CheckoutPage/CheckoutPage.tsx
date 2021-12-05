@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 
 import { CartContext } from "../../context/CartItemsContext";
 
@@ -6,7 +6,8 @@ import './CheckoutPage.css';
 
 const CheckoutPage: React.FC = () => {
     const { items, total } = useContext(CartContext);
-    console.log(items, 'items')
+    
+
     return (
         <div>
             {total > 0 && 
