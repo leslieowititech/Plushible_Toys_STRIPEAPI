@@ -1,24 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ProductsList from './components/ProductsList/ProductCard/ProducstsList';
 import AddProductFrom from './components/Forms/AddProductForm';
 import './App.css';
 
 const App: React.FC = () => {
-  const products = fetch('http://localhost:8080/products')
-  .then(res => {
-    if(!res.ok){
-      throw new Error(`Http error: ${res.status}`)
+
+  const [products, setProducts] = useState([])
+
+  const getProducts = async () => {
+    const response = await fetch('http://localhost:8080/products', {
+      headers: {'Content-Type': 'application/json'}
+    })
+
+    if(response.ok){
+      const data = await response.json()
+      console.log(data.data)
+      setProducts(data.data)
     }
-    return res
-  })
-  .then(products => console.log(products.json(), 'testing______)))000'))
+  }
+
+  useEffect(() => {
+    getProducts()
+  },[])
 
 
   return (
     <div className="App">
       <NavBar />
-      <AddProductFrom/>
+      {/* <AddProductFrom/> */}
+      <ProductsList products={products}/>
     </div>
   );
 }
