@@ -9,5 +9,7 @@
 .nav-bar-cart-icon span{
     color: #f02e51;
     font-weight: 700;
+    position: absolute;
+    top: .6rem;
     
 }

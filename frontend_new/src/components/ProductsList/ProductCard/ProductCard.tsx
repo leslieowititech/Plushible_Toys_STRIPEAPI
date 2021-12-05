@@ -12,10 +12,12 @@ export interface ProductCardProps {
 } 
 
 const ProductCard: React.FC<ProductCardProps> = ({ description, unit_amount, name, images}) => {
-    const { quantity,items, setItems } = useContext(CartContext);
+    const { quantity,items, setItems , setQuantity} = useContext(CartContext);
 
     const handleAddToCart = (e: React.FormEvent) => {
-        console.log(quantity)
+        e.preventDefault();
+        setItems([...items,{ description, name, unit_amount, images}])
+        setQuantity(quantity + 1)
     }
 
     return (

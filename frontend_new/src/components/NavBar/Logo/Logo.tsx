@@ -11,9 +11,9 @@ const Logo: React.FC<LogoProps> = ({ firstPart, secondPart }) => {
     return (
         <div className='logo-container'>
             <BrowserRouter>
-                <Link to='/'>
+                <a href='/'>
                     <h1>{firstPart} <span>{secondPart}</span></h1>
-                </Link>
+                </a>
             </BrowserRouter>
 
 

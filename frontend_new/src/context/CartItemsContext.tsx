@@ -13,7 +13,7 @@ interface CartProps {
 export const CartContext = createContext({} as CartProps);
 
 export const CartContextProvider: React.FC = ({ children }) => {
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(0);
     const [items, setItems] = useState([{} as ProductCardProps]);
     const [total, setTotal] = useState(0);
 
