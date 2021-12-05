@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../../../context/CartItemsContext";
 
 
 const QuantityDropDown: React.FC = () => {
-    
+    const { quantity, setQuantity } = useContext(CartContext)
     
     return (
-        <select>
+        <select value={quantity} onChange={e => setQuantity(+e.target.value)}>
             <option value={1}> 1</option>
             <option value={2}> 2</option>
             <option value={3}> 3</option>
