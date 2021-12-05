@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+
 import './SearchBar.css';
+import { SearchBarContext } from '../../../context/SearchBarContext';
 
-export interface SearchBarProps {
-    searchPhrase: string;
-    setSearchPhrase: React.Dispatch<React.SetStateAction<string>>
-}
 
-const SearchBar: React.FC<SearchBarProps> = ({ searchPhrase, setSearchPhrase }) => {
+
+const SearchBar: React.FC = () => {
+    const { searchPhrase, setSearchPhrase } = useContext(SearchBarContext)
     return (
         <div className='search-bar-container'>
             <SearchIcon className='search-bar-icon' />

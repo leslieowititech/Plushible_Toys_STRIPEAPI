@@ -8,7 +8,7 @@ const App: React.FC = () => {
 
   const [products, setProducts] = useState([]);
   const [prices, setPrices] = useState([]);
-  const [searchPhrase, setSearchPhrase] = useState('')
+  
 
   const getProducts = async () => {
     const response = await fetch('http://localhost:8080/products', {
@@ -29,9 +29,9 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <NavBar searchPhrase={searchPhrase} setSearchPhrase={setSearchPhrase}/>
+      <NavBar />
       {/* <AddProductFrom/> */}
-      <ProductsList products={products} prices={prices} searchPhrase={searchPhrase}/>
+      <ProductsList products={products} prices={prices}  />
     </div>
   );
 }

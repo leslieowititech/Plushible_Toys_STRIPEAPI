@@ -4,14 +4,13 @@ import Logo from './Logo/Logo';
 import SearchBar from './SearchBar/SearchBar';
 import './NavBar.css';
 
-import { SearchBarProps } from './SearchBar/SearchBar';
 
-const NavBar: React.FC<SearchBarProps> = ({ searchPhrase, setSearchPhrase}) => {
+const NavBar: React.FC = () => {
     
     return (
         <div className='nav-bar-continer'>
             <Logo firstPart={'Plushible'} secondPart={'Toys'} />
-            <SearchBar searchPhrase={searchPhrase} setSearchPhrase={setSearchPhrase}/>
+            <SearchBar/>
             <ShoppingCartIcon />
         </div>
     )

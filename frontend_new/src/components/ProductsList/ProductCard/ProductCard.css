@@ -50,7 +50,6 @@
         gap: .5rem;
         grid-template-columns: repeat(2, 1fr);
         /* grid-template-rows: .7fr .3fr ; */
-        border: 1px solid red;
         width: 75%;
         height: max-content;
         
@@ -62,12 +61,10 @@
 
     .product-card-image-container{
         width: 100%;
-        border: 3px solid green;
         height: max-content;
     }
     .product-card-details-container{
         width: 100%;
-        border: 3px solid green;
         height: max-content;
         position: relative;
         top: 3em;
@@ -76,6 +73,7 @@
     .product-card-utility{
         grid-column: 2;
         grid-row: 2;
+        place-items: center;
         
     }
 

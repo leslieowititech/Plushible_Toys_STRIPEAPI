@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ProductCard from './ProductCard';
-import {ProductCardProps} from './ProductCard'
+import {ProductCardProps} from './ProductCard';
+import {SearchBarContext} from '../../../context/SearchBarContext';
 
 interface ProductListProps {
     products: ProductCardProps[];
     prices: ProductCardProps[];
-    searchPhrase: string
+    
 }
-const ProductsList: React.FC<ProductListProps> = ({products, prices, searchPhrase}) => {
+const ProductsList: React.FC<ProductListProps> = ({ products, prices}) => {
+    const { searchPhrase} = useContext(SearchBarContext)
     return (
         <div>
             {products.filter(product => product.name.toLowerCase().includes(searchPhrase.toLowerCase())).map((product, index) => (
