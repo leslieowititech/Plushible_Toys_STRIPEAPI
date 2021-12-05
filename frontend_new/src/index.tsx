@@ -11,6 +11,7 @@ import { CartContextProvider } from './context/CartItemsContext';
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY!);
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Elements stripe={stripePromise}>
