@@ -11,18 +11,21 @@ export interface ProductCardProps {
 } 
 
 const ProductCard: React.FC<ProductCardProps> = ({ description, unit_amount, name, images}) => {
-    const { quantity,items, setItems , setQuantity} = useContext(CartContext);
+    const { items, setItems , setQuantity, setTotal, total} = useContext(CartContext);
+    let cartProducts = localStorage.getItem("items") || '[{}]';
+    cartProducts = JSON.parse(cartProducts);
 
     const handleAddToCart = (e: React.FormEvent) => {
         e.preventDefault();
         setItems([...items,{ description, name, unit_amount, images}])
-        setQuantity(quantity + 1);
+        setTotal(total + unit_amount)
         localStorage.setItem("items", JSON.stringify(items))
+        
     }
 
     useEffect(() => {
-        setItems(items)
-    },[items, setItems])
+        setQuantity(cartProducts.length-1);
+    },[items, cartProducts, setQuantity])
 
     return (
         <div className='product-card-container'>
